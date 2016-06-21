@@ -32,7 +32,7 @@ DropActionWidget.prototype.render = function(parent,nextSibling) {
 	this.computeAttributes();
 	this.execute();
 	// Create element
-	var domNode = this.document.createElement("div");
+	var domNode = this.document.createElement("span");
 	domNode.className = "tc-dropzone";
 	// Add event handlers
 	$tw.utils.addEventListeners(domNode,[
