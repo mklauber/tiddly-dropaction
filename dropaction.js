@@ -117,12 +117,10 @@ DropActionWidget.prototype.handleDropEvent  = function(event) {
 	// Try to import the various data types we understand
 	var tiddler = this.importData(event.dataTransfer);
 	
-	var currentTiddler = this.getVariable("currentTiddler");
-	this.setVariable("currentTiddler",tiddler.title);
-
-    this.invokeActions(this,event);
-    
-    this.setVariable("currentTiddler",currentTiddler);
+	this.setVariable("droppedTiddler",tiddler.title);
+	this.refreshChildren({});
+	this.invokeActions(this,event);
+   
 	
 	
 	// Tell the browser that we handled the drop
